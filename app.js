@@ -24,7 +24,7 @@ function checkAnswer() {
     message.textContent = `🎉 ${difficulty.toUpperCase()}クリア！`;
 
     setTimeout(() => {
-      currentDifficultyIndex++;
+      currentDifficultyIndex+=1;
       if (currentDifficultyIndex < difficultyOrder.length) {
         message.textContent = `▶ 次は ${difficultyOrder[currentDifficultyIndex].toUpperCase()} ステージ！`;
         setTimeout(() => {
