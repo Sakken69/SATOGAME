@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <link rel="manifest" href="manifest.json">
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("./sw.js")
+      .then(reg => console.log("ServiceWorker登録成功:", reg.scope))
+      .catch(err => console.log("ServiceWorker登録失敗:", err));
+  }
+</script>
   <meta charset="UTF-8">
   <title>並び判定ステージ</title>
   <style>
