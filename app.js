@@ -72,9 +72,9 @@ function createTiles() {
 
 function getBoardSize() {
   let difficulty = difficultyOrder[currentDifficultyIndex];
-  if (difficulty === "easy") return { columns: 3, rows: 3 };     // 3×3
-  if (difficulty === "normal") return { columns: 5, rows: 3 };   // 5×3 ←ココ！
-  if (difficulty === "hard") return { columns: 8, rows: 6 };     // 5×5など
+  if (difficulty === "easy"){ return { columns: 3, rows: 3 }};     // 3×3
+  if (difficulty === "normal"){ return { columns: 5, rows: 3 }};   // 5×3 ←ココ！
+  if (difficulty === "hard"){ return { columns: 8, rows: 6 }};     // 5×5など
   
 }
 
