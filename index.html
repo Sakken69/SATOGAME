@@ -47,7 +47,26 @@
   <div id="message"></div>
 
   <script>
+cconst inpos = [2,1,2,3,2,3,2,1,2];
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    let stage = 1;
 
+    function createTiles() {
+      grid.innerHTML = "";
+      for (let i = 0; i < 9; i++) {
+        const tile = document.createElement("div");
+        tile.className = "tile";
+        tile.textContent = inpos[i];
+        tile.dataset.index = i; // タイルの位置記録（0〜8）
+        tile.addEventListener("click", () => {
+          tile.classList.toggle("black");
+          checkAnswer();
+        });
+        grid.appendChild(tile);
+      }
+    }
+  createTiles()
   </script>
   <div class = 'rule'>
     ルール説明<br>
