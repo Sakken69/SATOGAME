@@ -3,7 +3,7 @@ const urlsToCache = [
   './',
   './index.html',
   './styles.css',       // あればCSSファイル
-  './script.js',         // メインJSファイル
+  './app.js',         // メインJSファイル
   './manifest.json',
   './tileicon.svg',
   './tileicon.svg'
