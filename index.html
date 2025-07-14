@@ -1,16 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <link rel="manifest" href="manifest.json">
-<script src="./app.js">
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js")
-      .then(reg => console.log("ServiceWorker登録成功:", reg.scope))
-      .catch(err => console.log("ServiceWorker登録失敗:", err));
-  }
-</script>
   <meta charset="UTF-8">
-  <title>白黒タイル</title>
+  <title>並び判定ステージ</title>
   <style>
     .grid {
       display: grid;
@@ -47,7 +39,8 @@
   <div id="message"></div>
 
   <script>
-cconst inpos = [2,1,2,3,2,3,2,1,2];
+    
+    const inpos = [2,1,2,3,2,3,2,1,2];
     const grid = document.getElementById("grid");
     const message = document.getElementById("message");
     let stage = 1;
@@ -66,7 +59,10 @@ cconst inpos = [2,1,2,3,2,3,2,1,2];
         grid.appendChild(tile);
       }
     }
-  createTiles()
+
+
+
+    createTiles(); // 初期ステージ描画
   </script>
   <div class = 'rule'>
     ルール説明<br>
