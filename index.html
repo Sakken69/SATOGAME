@@ -59,22 +59,7 @@
       }
     }
 
-    function checkAnswer() {
-      const tiles = document.querySelectorAll(".tile");
-      // 特定の位置（中央列 1,4,7 → index 1,4,7）が黒かどうか判定
-      const correctIndexes = [1, 4, 7];
-      const isCorrect = correctIndexes.every(i =>
-        tiles[i].classList.contains("black")
-      );
-      if (isCorrect) {
-        message.textContent = `🎉 正解！ステージ${stage}クリア！`;
-        setTimeout(() => {
-          stage++;
-          message.textContent = "";
-          createTiles(); // 新ステージへ（ここで条件変更可能）
-        }, 2000);
-      }
-    }
+
 
     createTiles(); // 初期ステージ描画
   </script>
