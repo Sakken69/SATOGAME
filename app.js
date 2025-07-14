@@ -3,6 +3,7 @@ const stages = {
   normal: [1,5,7,9,13],      
   hard: [2,5,9,10,12,13,14,15,16,17,21,25,28,29,30,31,33,35,38,41,44,45,46,47]  
 };
+createTiles()
 
 let difficultyOrder = ["easy", "normal", "hard"];
 let currentDifficultyIndex = 0;
@@ -75,7 +76,6 @@ function getBoardSize() {
   if (difficulty === "easy"){ return { columns: 3, rows: 3 }};     // 3×3
   if (difficulty === "normal"){ return { columns: 5, rows: 3 }};   // 5×3 ←ココ！
   if (difficulty === "hard"){ return { columns: 8, rows: 6 }};     // 5×5など
-  
 }
 
 const easpos = [2,1,2,3,2,3,2,1,2];
