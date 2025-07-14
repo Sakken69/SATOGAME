@@ -47,6 +47,7 @@
   <div id="message"></div>
 
   <script>
+    let first = 0
     const inpos = [2,1,2,3,2,3,2,1,2];
     const grid = document.getElementById("grid");
     const message = document.getElementById("message");
@@ -63,7 +64,9 @@
           tile.classList.toggle("black");
           checkAnswer();
         });
+        if(first == 0){
         createTiles();
+        }
         grid.appendChild(tile);
       }
     }
