@@ -53,22 +53,7 @@
     const message = document.getElementById("message");
     let stage = 1;
 
-    function createTiles() {
-      grid.innerHTML = "";
-      first = 1;
-      for (let i = 0; i < 9; i++) {
-        const tile = document.createElement("div");
-        tile.className = "tile";
-        tile.textContent = inpos[i];
-        tile.dataset.index = i; // タイルの位置記録（0〜8）
-        tile.addEventListener("click", () => {
-          tile.classList.toggle("black");
-          checkAnswer();
-        });
-        
-        grid.appendChild(tile);
-      }
-    }
+    
     if(first ===0){
       createTiles();
       first += 1;
