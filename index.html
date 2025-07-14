@@ -55,6 +55,7 @@
 
     function createTiles() {
       grid.innerHTML = "";
+      first = 1;
       for (let i = 0; i < 9; i++) {
         const tile = document.createElement("div");
         tile.className = "tile";
@@ -68,10 +69,9 @@
         grid.appendChild(tile);
       }
     }
-if(first === 0){
+    if(first === 0){
         createTiles();
-        first += 1;
-        }
+    }
   </script>
   <div class = 'rule'>
     ルール説明<br>
