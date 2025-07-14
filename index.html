@@ -67,11 +67,12 @@
         grid.appendChild(tile);
       }
     }
-
-
-
-    createTiles(); // 初期ステージ描画
   </script>
+  <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    createTiles(); // ← これならステージロジックも守られる
+  });
+</script>
   <div class = 'rule'>
     ルール説明<br>
 　・タイルをクリックすると、白黒が交互に入れ替わります。<br>
