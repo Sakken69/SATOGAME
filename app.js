@@ -4,6 +4,11 @@ const stages = {
   hard: [2,5,9,10,12,13,14,15,16,17,21,25,28,29,30,31,33,35,38,41,44,45,46,47]   // 真ん中＋左右広め
 };
 
+document.addEventListener("DOMContentLoaded", () => {
+  createTiles(); // 初期ステージ（easy）を生成
+});
+
+
 let difficultyOrder = ["easy", "normal", "hard"];
 let currentDifficultyIndex = 0;
 
