@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>並び判定ステージ</title>
+  <style>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 60px);
+      gap: 10px;
+      margin: 20px;
+    }
+    .tile {
+      width: 60px;
+      height: 60px;
+      background-color: white;
+      border: 2px solid #333;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .black {
+      background-color: black;
+      color: white;
+    }
+    #message {
+      margin-top: 10px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <div id="grid" class="grid"></div>
+  <div id="message"></div>
 
+  <script>
+    const inpos = [2,1,2,3,2,3,2,1,2];
+    const grid = document.getElementById("grid");
+    const message = document.getElementById("message");
+    let stage = 1;
+
+    function createTiles() {
+      grid.innerHTML = "";
+      for (let i = 0; i < 9; i++) {
+        const tile = document.createElement("div");
+        tile.className = "tile";
+        tile.textContent = inpos[i];
+        tile.dataset.index = i; // タイルの位置記録（0〜8）
+        tile.addEventListener("click", () => {
+          tile.classList.toggle("black");
+          checkAnswer();
+        });
+        grid.appendChild(tile);
+      }
+    }
+
+    function checkAnswer() {
+      const tiles = document.querySelectorAll(".tile");
+      // 特定の位置（中央列 1,4,7 → index 1,4,7）が黒かどうか判定
+      const correctIndexes = [1, 4, 7];
+      const isCorrect = correctIndexes.every(i =>
+        tiles[i].classList.contains("black")
+      );
+      if (isCorrect) {
+        message.textContent = `🎉 正解！ステージ${stage}クリア！`;
+        setTimeout(() => {
+          stage++;
+          message.textContent = "";
+          createTiles(); // 新ステージへ（ここで条件変更可能）
+        }, 2000);
+      }
+    }
+
+    createTiles(); // 初期ステージ描画
+  </script>
+  <div class = 'rule'>
+    ルール説明<br>
+　・タイルをクリックすると、白黒が交互に入れ替わります。<br>
+　・タイルに書かれている数字は、そのタイルの周囲８マスのタイルのうち<br>
+　　クリア盤面の黒色のものの数を表します（マインスイーパーをイメージするといいかも）。<br>
+　・すべてのタイルの条件に合うような盤面にできればクリアです。<br>
+　・もしかしたら別解があるかもしれませんが、自分はそんなに頭良くないので<br>
+　　想定解しか正解判定にしておりません。ごめんなさい。<br>
+　・全3ステージ！阪大生ならクリアできるよね！？
+　</div>
+</body>
+</html>
