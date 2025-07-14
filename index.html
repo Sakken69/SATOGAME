@@ -64,13 +64,14 @@
           tile.classList.toggle("black");
           checkAnswer();
         });
-        if(first == 0){
-        createTiles();
-        }
+        
         grid.appendChild(tile);
       }
     }
-
+if(first == 0){
+        createTiles();
+        first = 1
+        }
 
 
      // 初期ステージ描画
