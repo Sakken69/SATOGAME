@@ -1,7 +1,7 @@
 {
   "name": "白黒タイルパズル",
   "short_name": "ShiroKuro",
-  "start_url": "./index.html",
+  "start_url": "./app.js",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#f5f5f5",
