@@ -5,8 +5,8 @@ const urlsToCache = [
   './styles.css',       // あればCSSファイル
   './script.js',         // メインJSファイル
   './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
+  './tileicon.svg',
+  './tileicon.svg'
 ];
 
 // インストール時にキャッシュ
