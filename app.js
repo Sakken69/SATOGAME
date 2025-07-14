@@ -10,7 +10,7 @@ let currentDifficultyIndex = 0;
 
 function checkAnswer() {
   const tiles = document.querySelectorAll(".tile");
-  let difficulty = difficultyOrder[currentDifficultyIndex];
+  const difficulty = difficultyOrder[currentDifficultyIndex];
   const correctIndexes = stages[difficulty];
 
   const isCorrect = correctIndexes.every(i =>
@@ -44,8 +44,8 @@ function CreateTiles() {
 
   const { columns, rows } = getBoardSize();
   const totalTiles = columns * rows;
-  let difficulty = difficultyOrder[currentDifficultyIndex];
-  let numbers = stageNumbers[difficulty]; // ステージ専用数字を取得
+  const difficulty = difficultyOrder[currentDifficultyIndex];
+  const numbers = stageNumbers[difficulty]; // ステージ専用数字を取得
 
   grid.style.gridTemplateColumns = `repeat(${columns}, 60px)`;
 
@@ -72,7 +72,7 @@ function CreateTiles() {
 }
 
 function getBoardSize() {
-  let difficulty = difficultyOrder[currentDifficultyIndex];
+  const difficulty = difficultyOrder[currentDifficultyIndex];
   if (difficulty === "easy"){ return { columns: 3, rows: 3 }};     // 3×3
   if (difficulty === "normal"){ return { columns: 5, rows: 3 }};   // 5×3 ←ココ！
   if (difficulty === "hard"){ return { columns: 8, rows: 6 }};     // 5×5など
