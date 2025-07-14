@@ -3,7 +3,7 @@ const stages = {
   normal: [1,5,7,9,13],      
   hard: [2,5,9,10,12,13,14,15,16,17,21,25,28,29,30,31,33,35,38,41,44,45,46,47]  
 };
-createTiles()
+CreateTiles()
 
 let difficultyOrder = ["easy", "normal", "hard"];
 let currentDifficultyIndex = 0;
@@ -30,7 +30,7 @@ function checkAnswer() {
         message.textContent = `▶ 次は ${difficultyOrder[currentDifficultyIndex].toUpperCase()} ステージ！`;
         setTimeout(() => {
           message.textContent = "";
-          createTiles(); // ステージ切り替え
+          CreateTiles(); // ステージ切り替え
         }, 2000);
       } else {
         message.textContent = "🏆 全ステージクリア！おめ！";
@@ -39,7 +39,7 @@ function checkAnswer() {
   }
 }
 
-function createTiles() {
+function CreateTiles() {
   grid.innerHTML = "";
 
   const { columns, rows } = getBoardSize();
